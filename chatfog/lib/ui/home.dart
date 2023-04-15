@@ -117,7 +117,7 @@ class HomePage extends StatelessWidget {
 }
 
 class Group extends StatelessWidget {
-   Group({super.key, required this.rad});
+   const Group({super.key, required this.rad});
 
   final double rad;
   @override
@@ -129,10 +129,10 @@ class Group extends StatelessWidget {
         CircleAvatar(
           backgroundColor: Colors.white,
           radius: rad,
-          child: Placeholder(),
+          child: const Placeholder(),
         ),
-        SizedBox(width: 20),
-        Text(
+        const SizedBox(width: 20),
+        const Text(
           'Name',
           style: TextStyle(
               fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
