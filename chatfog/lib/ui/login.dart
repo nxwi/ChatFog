@@ -1,3 +1,4 @@
+import 'package:chatfog/ui/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -57,7 +58,12 @@ class LoginPage extends StatelessWidget {
                       width: MediaQuery.of(context).size.width - 100,
                       alignment: Alignment.center,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage()));
+                        },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xffFFCB45),
                             // padding: const EdgeInsets.symmetric(
