@@ -2,6 +2,7 @@ import 'package:chatfog/ui/chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,9 +14,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: false,
-        title: const Text(
-          'ChatFog',
-          style: TextStyle(
+        title: Text(
+          // 'ChatFog',
+          FirebaseAuth.instance.currentUser!.displayName!,
+          style: const TextStyle(
               color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
         ),
       ),
@@ -103,7 +105,7 @@ class HomePage extends StatelessWidget {
                     decoration: const BoxDecoration(
                       color: Colors.white,
                     ),
-                    child: Group(rad: 30,),
+                    child: const Group(rad: 30,),
                   ),
                 );
               },

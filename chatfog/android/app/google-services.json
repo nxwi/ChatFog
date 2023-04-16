@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "64996376333",
+    "project_id": "chat-fog",
+    "storage_bucket": "chat-fog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64996376333:android:50825d2a9bd0ce9b02ba44",
+        "android_client_info": {
+          "package_name": "com.naswih.chatfog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64996376333-5pln14kib5dm6d94elsge93ihsj3bime.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9GeAyvILcQzlJIFa80RcEu9PvvPL8aeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64996376333-5pln14kib5dm6d94elsge93ihsj3bime.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

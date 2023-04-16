@@ -1,3 +1,4 @@
+import 'package:chatfog/ui/auth_service.dart';
 import 'package:chatfog/ui/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -59,6 +60,7 @@ class LoginPage extends StatelessWidget {
                       alignment: Alignment.center,
                       child: ElevatedButton(
                         onPressed: () {
+                          AuthService().signInWithGoogle();
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(

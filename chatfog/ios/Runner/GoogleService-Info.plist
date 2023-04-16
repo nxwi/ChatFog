@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>64996376333-agqooie0fb1vmcdvfd25i9p95d2qc4qk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.64996376333-agqooie0fb1vmcdvfd25i9p95d2qc4qk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCtqF0Ilh_hxR_GbrPnylAiOO1yZgw7GAk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>64996376333</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.naswih.chatfog</string>
+	<key>PROJECT_ID</key>
+	<string>chat-fog</string>
+	<key>STORAGE_BUCKET</key>
+	<string>chat-fog.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:64996376333:ios:d313b9a5b582855902ba44</string>
+</dict>
+</plist>
