@@ -18,9 +18,10 @@ class AuthService {
 
     print('successfully logedin ${usercredntial.user?.displayName}');
 
-    if(usercredntial.user != null){
-Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomePage()));
-    };
+    if (usercredntial.user != null) {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
+    }
   }
 
   handleAuthState() {
@@ -37,7 +38,7 @@ Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Home
               return HomePage();
             }
           } else {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
@@ -63,7 +64,7 @@ Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Home
   //   return await FirebaseAuth.instance.signInWithCredential(credential);
   // }
 
-  signOut(context) async{
+  signOut(context) async {
     await GoogleSignIn().signOut();
     FirebaseAuth.instance.signOut();
     Navigator.pushReplacement(
