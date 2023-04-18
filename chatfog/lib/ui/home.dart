@@ -1,12 +1,13 @@
+import 'package:chatfog/ui/auth_service.dart';
 import 'package:chatfog/ui/chat.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+   HomePage({super.key});
 
+
+final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,10 +17,14 @@ class HomePage extends StatelessWidget {
         centerTitle: false,
         title: Text(
           // 'ChatFog',
-          FirebaseAuth.instance.currentUser!.displayName!,
+          // FirebaseAuth.instance.currentUser?.displayName,
+user?.displayName ?? 'name',
           style: const TextStyle(
               color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
         ),
+        actions: [
+        IconButton(onPressed: ()=>AuthService().signOut(context), icon:Icon( Icons.logout))
+        ],
       ),
       body: Column(
         children: [

@@ -1,7 +1,5 @@
 import 'package:chatfog/ui/home.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class Chat extends StatelessWidget {
   const Chat({super.key});
@@ -10,7 +8,7 @@ class Chat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Group(
+        title: const Group(
           rad: 20,
         ),
       ),

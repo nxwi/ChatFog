@@ -6,17 +6,18 @@ import 'package:chatfog/ui/auth_service.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+  AuthService authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(useMaterial3: true),
-      home: AuthService().handleAuthState(),
+      home: authService.handleAuthState(),
     );
   }
 }
