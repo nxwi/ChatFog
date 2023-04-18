@@ -1,11 +1,11 @@
 import 'package:chatfog/ui/auth_service.dart';
 import 'package:chatfog/ui/home.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+   LoginPage({super.key});
+  AuthService authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class LoginPage extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   Center(
                     child: Container(
                       margin: const EdgeInsets.only(top: 20),
@@ -60,11 +60,8 @@ class LoginPage extends StatelessWidget {
                       alignment: Alignment.center,
                       child: ElevatedButton(
                         onPressed: () {
-                          AuthService().signInWithGoogle();
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const HomePage()));
+                        
+                        authService.signinWithGoogle(context);
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xffFFCB45),
