@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatelessWidget {
-   HomePage({super.key});
+  HomePage({super.key});
 
-
-final user = FirebaseAuth.instance.currentUser;
+  final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,12 +17,14 @@ final user = FirebaseAuth.instance.currentUser;
         title: Text(
           // 'ChatFog',
           // FirebaseAuth.instance.currentUser?.displayName,
-user?.displayName ?? 'name',
+          user?.displayName ?? 'Name',
           style: const TextStyle(
               color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
         ),
         actions: [
-        IconButton(onPressed: ()=>AuthService().signOut(context), icon:Icon( Icons.logout))
+          IconButton(
+              onPressed: () => AuthService().signOut(context),
+              icon: const Icon(Icons.logout))
         ],
       ),
       body: Column(
@@ -31,15 +32,33 @@ user?.displayName ?? 'name',
           Row(children: [
             Column(
               children: [
-                Container(
-                  margin: const EdgeInsets.only(top: 20, left: 20),
-                  height: 80,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(50)),
-                  child: const Placeholder(),
+                Myprofile(
+                  color: 0xFF00BCD4,
+                  onPressed: (){
+                    showDialog(context: context,builder: (context) {
+                      return AlertDialog(
+                        title: Text('enable locations '),
+                        actions: [
+                          ElevatedButton(onPressed: (){
+                            Navigator.of(context).pop();
+                          }, child: Text('yes')),
+                          ElevatedButton(onPressed: (){
+                            Navigator.of(context).pop();
+                          }, child: Text('no'))
+                        ],
+                      );
+                    },);
+                  },
                 ),
+                // Container(
+                //   margin: const EdgeInsets.only(top: 20, left: 20),
+                //   height: 80,
+                //   width: 80,
+                //   decoration: BoxDecoration(
+                //       color: Colors.white,
+                //       borderRadius: BorderRadius.circular(50)),
+                //   child: Image(image:NetworkImage('https://picsum.photos/200/300') ,),
+                // ),
                 const Padding(
                   padding: EdgeInsets.only(left: 20, top: 10),
                   child: Text(
@@ -78,7 +97,7 @@ user?.displayName ?? 'name',
           const SizedBox(height: 15),
           Container(
             width: MediaQuery.of(context).size.width * 1,
-            height: MediaQuery.of(context).size.height - 245,
+            height: MediaQuery.of(context).size.height - 260,
             padding: const EdgeInsets.only(top: 10),
             decoration: const BoxDecoration(
               color: Colors.white,
@@ -110,7 +129,9 @@ user?.displayName ?? 'name',
                     decoration: const BoxDecoration(
                       color: Colors.white,
                     ),
-                    child: const Group(rad: 30,),
+                    child: const Group(
+                      rad: 30,
+                    ),
                   ),
                 );
               },
@@ -124,13 +145,11 @@ user?.displayName ?? 'name',
 }
 
 class Group extends StatelessWidget {
-   const Group({super.key, required this.rad});
+  const Group({super.key, required this.rad});
 
   final double rad;
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context) {
     return Row(
       children: [
         CircleAvatar(
@@ -151,21 +170,28 @@ class Group extends StatelessWidget {
 
 class Myprofile extends StatelessWidget {
   const Myprofile({
-    super.key,
+    super.key, this.onPressed, this.color=0xffFFCB45,
   });
-
+  final color;
+final onPressed;
   @override
   Widget build(BuildContext context) {
-    return const CircleAvatar(
-        radius: 40,
-        backgroundColor: Color(0xffFFCB45),
-        child: CircleAvatar(
-          radius: 37,
-          backgroundColor: Colors.black,
-          child: CircleAvatar(
-              radius: 35,
-              backgroundColor: Colors.white,
-              backgroundImage: NetworkImage('https://picsum.photos/200/300')),
-        ));
+    return Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: InkWell(
+        onTap: onPressed,
+        child:  CircleAvatar(
+            radius: 40,
+            backgroundColor: Color(color),
+            child: CircleAvatar(
+              radius: 37,
+              backgroundColor: Colors.black,
+              child: CircleAvatar(
+                  radius: 35,
+                  backgroundColor: Colors.white,
+                  backgroundImage: NetworkImage('https://picsum.photos/200/300')),
+            )),
+      ),
+    );
   }
 }

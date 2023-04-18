@@ -1,10 +1,8 @@
 import 'package:chatfog/ui/auth_service.dart';
-import 'package:chatfog/ui/home.dart';
 import 'package:flutter/material.dart';
 
-
 class LoginPage extends StatelessWidget {
-   LoginPage({super.key});
+  LoginPage({super.key});
   AuthService authService = AuthService();
 
   @override
@@ -60,13 +58,10 @@ class LoginPage extends StatelessWidget {
                       alignment: Alignment.center,
                       child: ElevatedButton(
                         onPressed: () {
-                        
-                        authService.signinWithGoogle(context);
+                          authService.signinWithGoogle(context);
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xffFFCB45),
-                            // padding: const EdgeInsets.symmetric(
-                            //     horizontal: 20, vertical: 20),
                             textStyle: const TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold)),
                         child: Row(
