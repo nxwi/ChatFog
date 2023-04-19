@@ -34,20 +34,27 @@ class HomePage extends StatelessWidget {
               children: [
                 Myprofile(
                   color: 0xFF00BCD4,
-                  onPressed: (){
-                    showDialog(context: context,builder: (context) {
-                      return AlertDialog(
-                        title: Text('enable locations '),
-                        actions: [
-                          ElevatedButton(onPressed: (){
-                            Navigator.of(context).pop();
-                          }, child: Text('yes')),
-                          ElevatedButton(onPressed: (){
-                            Navigator.of(context).pop();
-                          }, child: Text('no'))
-                        ],
-                      );
-                    },);
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Text('enable locations '),
+                          actions: [
+                            ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('yes')),
+                            ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('no'))
+                          ],
+                        );
+                      },
+                    );
                   },
                 ),
                 // Container(
@@ -60,7 +67,7 @@ class HomePage extends StatelessWidget {
                 //   child: Image(image:NetworkImage('https://picsum.photos/200/300') ,),
                 // ),
                 const Padding(
-                  padding: EdgeInsets.only(left: 20, top: 10),
+                  padding: EdgeInsets.only(left: 0, top: 10),
                   child: Text(
                     'Scan',
                     style: TextStyle(fontSize: 13, color: Colors.white),
@@ -69,7 +76,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 130,
+              height: 125,
               width: MediaQuery.of(context).size.width - 100,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -81,7 +88,7 @@ class HomePage extends StatelessWidget {
                     children: const [
                       Myprofile(),
                       Padding(
-                        padding: EdgeInsets.only(left: 20, top: 10),
+                        padding: EdgeInsets.only(left: 10, top: 10),
                         child: Text(
                           'Name',
                           style: TextStyle(fontSize: 13, color: Colors.white),
@@ -155,11 +162,13 @@ class Group extends StatelessWidget {
         CircleAvatar(
           backgroundColor: Colors.white,
           radius: rad,
-          child: const Placeholder(),
+          backgroundImage: NetworkImage(
+              'https://png.pngtree.com/png-vector/20191009/ourmid/pngtree-group-icon-png-image_1796653.jpg'),
+          // child: const Placeholder(),
         ),
         const SizedBox(width: 20),
         const Text(
-          'Name',
+          'Group Name',
           style: TextStyle(
               fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
         )
@@ -170,17 +179,19 @@ class Group extends StatelessWidget {
 
 class Myprofile extends StatelessWidget {
   const Myprofile({
-    super.key, this.onPressed, this.color=0xffFFCB45,
+    super.key,
+    this.onPressed,
+    this.color = 0xffFFCB45,
   });
   final color;
-final onPressed;
+  final onPressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 8.0),
       child: InkWell(
         onTap: onPressed,
-        child:  CircleAvatar(
+        child: CircleAvatar(
             radius: 40,
             backgroundColor: Color(color),
             child: CircleAvatar(
@@ -189,7 +200,8 @@ final onPressed;
               child: CircleAvatar(
                   radius: 35,
                   backgroundColor: Colors.white,
-                  backgroundImage: NetworkImage('https://picsum.photos/200/300')),
+                  backgroundImage: NetworkImage(
+                      'https://png.pngtree.com/png-vector/20191009/ourmid/pngtree-group-icon-png-image_1796653.jpg')),
             )),
       ),
     );
