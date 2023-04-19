@@ -120,7 +120,7 @@ class HomePage extends StatelessWidget {
                 return InkWell(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Chat()));
+                        MaterialPageRoute(builder: (context) => ChatScreen()));
                   },
                   child: Container(
                     margin: const EdgeInsets.only(left: 20, right: 20),
